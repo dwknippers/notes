@@ -16,7 +16,7 @@ import (
 )
 ```
 
-## Exported names
+## Exported Names
 A name is exported if it begins with a capital letter.
 
 ## Functions
@@ -160,7 +160,7 @@ An interface holds a value of a specific underlying concrete type.
 
 Calling a method on an interface value executes the method of the same name on its underlying type.
 
-### Underlying value nil
+### Underlying Value nil
 If the concrete value inside the interface itself is nul, the method will be called with a nil receiver.
 
 Note that an interface value that holds a nil concrete value is itself non-nil.
@@ -209,12 +209,12 @@ Output
 hello
 ```
 
-### Nil interface value
+### nil Interface Value
 A nil interface value holds neither value nor concrete type.
 
 Calling a method on a nil interface is a run-time error because there is no type inside the interface tuple to indicate which **concrete** method to call.
 
-### Empty interface
+### Empty Interface
 The interface type that specifies zero methods is known as the **empty inferface**
 
 ```go
@@ -225,7 +225,7 @@ An empty interface may hold values of any type. (Every type implements at least 
 
 Empty interfaces are used by code that handles values of unknown type. For example, `fmt.Print` takes any number of arguments of type `interface{}`.
 
-### Type assertions
+### Type Assertions
 A **type assertion** provides access to an interface value's underlying concrete value.
 
 ```go
@@ -260,7 +260,7 @@ var c, python, java bool = true, false, "no!"
 The `var` statements can be at package or function level.
 If an initializer is present, the type can be omitted; the variable will take the type of the initializer.
 
-### Short assignment statement
+### Short Assignment Statement
 Inside a function, the `:=` short assignment statement can be used in place of a `var` declaration with implicit type.
 
 >Outside a function, every statement begins with a keyword (`var`,`func`, and so on) and so the `:=` construct is not available.
@@ -306,12 +306,12 @@ var (
 )
 ```
 
-### Zero values
+### Zero Values
 `0` for numeric types  
 `false` for boolean type, and  
 `""` for strings.
 
-### Type conversions
+### Type Conversions
 The expression `T(v)` converts the value `v` to the type `T`.
 
 ```go
@@ -320,7 +320,7 @@ var f float64 = float64(i)
 var u uint = uint(f)
 ```
 
-### Type inference
+### Type Inference
 When declaring a variable without specifying an explicit type (either by using the `:=` syntax or `var = ` expression syntax), the variable's type is inferred from the value on the right side.
 
 ```go
@@ -356,7 +356,7 @@ p := &v
 p.X = 1e9
 ```
 
-#### Struct literals
+#### Struct Literals
 A struct literal denotes a newly allocated struct value by listing the values of its fields.
 
 You can list a subset of fields by using the `Name:` syntax. (And the order of named fields is irrelevant.)
@@ -431,14 +431,14 @@ for i := 0; i < len(board); i++ {
 }
 ```
 
-##### Slices are like references to arrays
+##### Slices Are Like References to Arrays
 A slice does not store any data, it just describes a section of an underlying array.
 
 Changing the elements of a slice modifies the corresponding elements of its underlying array.
 
 Other slices that share the same underlying array will see those changes.
 
-##### Slice literals
+##### Slice Literals
 A slice literal is like an array literal without the length.
 
 This is an array literal:
@@ -512,7 +512,7 @@ len=4 cap=6 [2 3 5 7]
 len=2 cap=4 [5 7]
 ```
 
-##### Creating a slice with make
+##### Creating a Slice With make
 
 Slices can be created with the built-in `make` function; this is how you create dynamically-sized arrays.
 
@@ -531,7 +531,7 @@ b = b[:cap(b)]	// len(b)=5, cap(b)=5
 b = b[1:]	// len(b)=4, cap(b)=4
 ```
 
-##### Appending to a slice
+##### Appending to a Slice
 Go provides a built-in `append` function.
 
 ```go
@@ -596,7 +596,7 @@ func main() {
 }
 ```
 
-#### Map literals
+#### Map Literals
 Map literals are like struct literals, but the keys are required.
 
 ```go
@@ -619,7 +619,7 @@ var m = map[string]Vertex{
 }
 ```
 
-#### Mutating maps
+#### Mutating Maps
 Insert or update an element in map `m`:
 ```go
 m[key] = elem
@@ -775,7 +775,7 @@ hello
 world
 ```
 
-#### Stacking defers
+#### Stacking Defers
 Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
 
 To learn more about defer statements read this [blog post](https://blog.golang.org/defer-panic-and-recover).
